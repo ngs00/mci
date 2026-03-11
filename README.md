@@ -13,12 +13,12 @@ Deriving governing equations from empirical observations is a longstanding chall
 
 ---
 
-## Dataset
+## Benchmark Symbolic Degression Datasets
 
-:exclamation: *The NIST IR spectrum dataset is not available in this repository due to the dataset license.*
-
-- The IR spectrum dataset is available at https://webbook.nist.gov/chemistry.
-- The metadata of the NIST dataset was uploaded to https://github.com/ngs00/ssin.
+- The training and evaluation datasets of the Chi2PDF, NNN, FHST, NOMC, and HHM problems are available at https://github.com/ngs00/mci.
+- The training and evaluation datasets of the NDO, MSB, and ECGB problems are available at https://github.com/deep-symbolic-mathematics/LLM-SR. The original problem names of NDO, MSB, and ECBG in the LLM-SR repository are oscillator2, stressstrain, and bactgrow, respectively.
+- The original data source of the BDC problem is https://github.com/alg-x/Battery-Capacity-Prediction-Using-Regression.
+- The original dataset of the SFL problem is available at https://link.springer.com/article/10.1186/2193-9772-3-8#MOESM1.
 
 ---
 
