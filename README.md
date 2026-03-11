@@ -8,8 +8,8 @@ Deriving governing equations from empirical observations is a longstanding chall
 
 ## Run
 - Please download and install Ollama from https://ollama.com/download.
-- ``train_ssin.py``: Train and evaluate SSIN based on k-fold cross validation.
-- ``exec_ssin.py``: Execute the trained SSIN model to calculate detection labels and important absorption peaks. Then, make an IR spectrum analysis report through SSIN-LLM.
+- Download the Mixtral:8x7b model via https://ollama.com/library/mixtral.
+- Execute ``exec.py`` in this repository.
 
 ---
 
