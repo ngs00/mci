@@ -22,8 +22,8 @@ Deriving governing equations from empirical observations is a longstanding chall
 
 ---
 
-## Downloading Phi-4 for Generating Analysis Reports
-Before executing ``exec_ssin.py``, you should install Phi-4 to generate a human-readable IR spectrum analysis report from the prediction results of SSIN. The installation process of Phi-4 is as follows.
+## Run with User-Defined Datasets
 
-1. Visit https://github.com/ollama/ollama to install the Ollama software.
-2. Download Phi-4 in https://ollama.com/library/phi4 through the Ollama software.
+- You need to prepare ``train`` and ``test`` datasets for deriving equations and evaluating them, respectively.
+- Then, add the configuration of your dataset into the ``config`` variable in ``exec.py``.
+- Finally, set the values of the ``tast_domain`` and ``dataset_name`` variables in ``exec.py``.
