@@ -62,5 +62,6 @@ if __name__ == '__main__':
                                 idx_target=config[dataset_name]['idx_target'])
     instruction = read_problem_instruction('res/instruction_{}.txt'.format(dataset_name))
 
-    search = Search(task_domain, dataset_train, instruction, num_agents=2, device=device, llm=LLM_MIXTRAL)
-    best_solution = search.run(max_iters=50, log_file='exec_log_{}.txt'.format(dataset_name))
+    search = Search(task_domain, dataset_train, instruction, num_agents=50, device=device, llm=LLM_MIXTRAL)
+    best_solution = search.run(max_iters=100, log_file='exec_log_{}.txt'.format(dataset_name))
+
