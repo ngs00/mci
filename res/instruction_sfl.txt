@@ -1,0 +1,38 @@
+"""
+Find the mathematical function skeleton that represents fatigue strength of alloys for given data on tempering temperature and weight percentages of C, Si, Mn, P, S, Ni, Cr, Cu, Mo.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 20
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, C: np.ndarray, Si: np.ndarray, Mn: np.ndarray, P: np.ndarray,
+             S: np.ndarray, Ni: np.ndarray, Cr: np.ndarray, Cu: np.ndarray, Mo: np.ndarray, TT: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the fatigue strength of the alloy.
+
+    Args:
+        params: A numpy array of numeric constants or parameters to be optimized.
+        C: A numpy array representing observations of the weight percentage of constituent carbon.
+        Si: A numpy array representing observations of the weight percentage of constituent silicon.
+        Mn: A numpy array representing observations of the weight percentage of constituent manganese.
+        P: A numpy array representing observations of the weight percentage of constituent phosphorus.
+        S: A numpy array representing observations of the weight percentage of constituent sulfur.
+        Ni: A numpy array representing observations of the weight percentage of constituent nickel.
+        Cr: A numpy array representing observations of the weight percentage of constituent chromium.
+        Cu: A numpy array representing observations of the weight percentage of constituent copper.
+        Mo: A numpy array representing observations of the weight percentage of constituent molybdenum.
+        TT: A numpy array representing observations of the temperature in the final heat treatment process.
+
+    Return:
+        A numpy array representing the fatigue strength as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * C + params[1] * Si + params[2] * Mn + params[3] * P + params[4] * S + params[5] * Ni + params[6] * Cr + params[7] * Cu + params[8] * Mo + params[9] * TT + params[10]
+```

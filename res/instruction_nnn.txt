@@ -1,0 +1,29 @@
+"""
+Find the mathematical function skeleton that represents outputs of a neural network for given data on 2-dimensional input.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 10
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, x1: np.ndarray, x2: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the output of the neural network.
+
+    Args:
+        params: Array of numeric constants or parameters to be optimized.
+        x1: A numpy array representing observations of the first input feature.
+        x2: A numpy array representing observations of the second input feature.
+
+    Return:
+        A numpy array representing the model output of the neural network as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * x1 + params[1] * x2 + params[2]
+```

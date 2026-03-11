@@ -1,0 +1,30 @@
+"""
+Find the mathematical function skeleton that represents Gibbs free energy of mixing for given data on polymer's volume fraction, degree of polymerization, and interaction parameter.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 4
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, phi: np.ndarray, N: np.ndarray, chi: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the total change in Gibbs free energy resulting from the mixing process.
+
+    Args:
+        params: Array of numeric constants or parameters to be optimized.
+        phi: A numpy array representing observations of the relative total volume occupied by the polymer.
+        N: A numpy array representing observations of the total number of repeating units in a single polymer.
+        chi: A numpy array representing observations of a dimensionless factor characterizing the energy exchange.
+
+    Return:
+        A numpy array representing Gibbs free energy as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * phi + params[1] * N + params[2] * chi + params[3]
+```

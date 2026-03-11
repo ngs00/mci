@@ -1,0 +1,33 @@
+"""
+Find the mathematical function skeleton that represents the discharge capacity for given data on cycle number, battery voltage, battery current, battery temperature, load voltage, and load current.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 10
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, cycle: np.ndarray, vol_bat: np.ndarray, cur_bat: np.ndarray, temp_bat: np.ndarray, vol_load: np.ndarray, cur_load: np.ndarray) -> np.ndarray:
+    """ Mathematical function for predicting the discharge capacity of Li-ion battery.
+
+    Args:
+        params: A numpy array of numeric constants or parameters to be optimized.
+        cycle: A numpy array representing observations of the count of charge and discharge repetitions.
+        vol_bat: A numpy array representing observations of the voltage measured across the battery terminals.
+        cur_bat: A numpy array representing observations of the current into or out of the battery.
+        temp_bat: A numpy array representing observations of the temperature of the battery surface during operation.
+        vol_load: A numpy array representing observations of the voltage measured at the load side.
+        cur_load: A numpy array representing observations of the current measured at the load side.
+
+    Return:
+        A numpy array representing the discharge capacity as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * cycle + params[1] * vol_bat + params[2] * cur_bat + params[3] * temp_bat + params[4] * vol_load + params[5] * cur_load + params[6]
+```

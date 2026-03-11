@@ -1,0 +1,32 @@
+"""
+Find the mathematical function skeleton that represents the rate of change of membrane potential for given data on membrane potential, sodium activation gate, sodium inactivation gate, potassium activation gate, and external current.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 10
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, V: np.ndarray, m: np.ndarray, n: np.ndarray, h: np.ndarray, I_ext: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the rate of change of membrane potential.
+
+    Args:
+        params: A numpy array of numeric constants or parameters to be optimized.
+        V: A numpy array observations of the electrical potential difference between the interior and exterior of the neuron.
+        m: A numpy array observations of the probability that the Na+ channel activation gates are open.
+        n: A numpy array observations of the probability that the Na+ channel inactivation gates are open.
+        h: A numpy array observations of the probability that the K+ channel gates are open.
+        I_ext: A numpy array observations of the external stimulus current
+
+    Return:
+        A numpy array representing the rate of change of membrane potential as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * V + params[1] * m + params[2] * h + params[3] * n + params[4] * I_ext + params[5]
+```

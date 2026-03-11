@@ -1,0 +1,33 @@
+"""
+Find the mathematical function skeleton that represents C2 gas yield of a chemical reactor in percent for given data on pressure, temperature, flow rate, H2 content, length, and diameter of the reactor.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 20
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, ps: np.ndarray, tp: np.ndarray, fr: np.ndarray, hc: np.ndarray, l: np.ndarray, d: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the yield of C2 gas in percent from a quartz tubular chemical reactor.
+
+    Args:
+        params: A numpy array of numeric constants or parameters to be optimized.
+        ps: A numpy array representing observations of the pressure inside the reactor.
+        tp: A numpy array representing observations of the temperature inside the reactor.
+        fr: A numpy array representing observations of the flow rate of chemical compounds in the reactor.
+        hc: A numpy array representing observations of the amount of H2 gas in the reactor.
+        l: A numpy array representing observations of the reactor length.
+        d: A numpy array representing observations of the reactor diameter.
+
+    Return:
+        A numpy array representing yield of C2 gas as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * ps + params[1] * tp + params[2] * fr + params[3] * hc + params[4] * l + params[5] * d + params[6]
+```

@@ -1,0 +1,29 @@
+"""
+Find the mathematical function skeleton that represents statistical density for given data on PDF input, and degree of freedom.
+"""
+
+
+```Python
+import numpy as np
+from scipy.special import ndtr, logit, expit, softmax, gamma
+
+
+# Initialize parameters
+MAX_NPARAMS = 4
+params = [1.0]*MAX_NPARAMS
+
+
+def equation(params: np.ndarray, x: np.ndarray, df: np.ndarray) -> np.ndarray:
+    """ Mathematical function for calculating the density.
+
+    Args:
+        params: Array of numeric constants or parameters to be optimized.
+        x: A numpy array representing observations of the input data.
+        df: A numpy array representing observations of the degree of freedom.
+
+    Return:
+        A numpy array representing density as the result of applying the mathematical function to the inputs.
+    """
+
+    return params[0] * x + params[1] * df + params[2]
+```
